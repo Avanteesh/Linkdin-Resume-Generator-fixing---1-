@@ -82,7 +82,7 @@ def handleProfile():
     url = request.form.get("url")
     profile_data = scrape_linkedin_profile(url)
     if profile_data is None:
-        return redirect("/error", status_code=303)  
+        return redirect("/error", 303)  
     resume_filename = "resume.pdf"
     resume_path = generate_resume(profile_data, resume_filename)
     return send_file(resume_path, as_attachment=True)
